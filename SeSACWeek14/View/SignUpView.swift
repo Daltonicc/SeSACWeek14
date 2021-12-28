@@ -33,6 +33,7 @@ class SignUpView: UIView, ViewRepresentable {
         let button = UIButton()
         button.setTitle("확인", for: .normal)
         button.tintColor = .white
+        button.backgroundColor = .orange
         return button
     }()
     
@@ -69,13 +70,13 @@ class SignUpView: UIView, ViewRepresentable {
             make.height.equalTo(50)
         }
         passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).multipliedBy(0.9)
+            make.top.equalTo(emailTextField.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalTo(self.snp.width).multipliedBy(0.9)
             make.height.equalTo(50)
         }
         okButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordTextField.snp.bottom).multipliedBy(0.9)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalTo(self.snp.width).multipliedBy(0.9)
             make.height.equalTo(50)

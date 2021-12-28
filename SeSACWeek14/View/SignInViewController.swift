@@ -31,6 +31,7 @@ class SignInViewController: UIViewController {
         mainView.signInButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
         mainView.usernameTextField.addTarget(self, action: #selector(usernameTextFieldDidChange(_:)), for: .editingChanged)
         mainView.passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
+        mainView.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
         
     }
     
@@ -50,5 +51,12 @@ class SignInViewController: UIViewController {
                 windowScene.windows.first?.makeKeyAndVisible()
             }
         }
+    }
+    
+    @objc func signUpButtonClicked() {
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: SignUpViewController())
+        windowScene.windows.first?.makeKeyAndVisible()
     }
 }
