@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum APIError: Error {
     case invalidResponse
@@ -65,7 +66,7 @@ class APIService {
         request.httpMethod = "POST"
         request.httpBody = "username=\(username)&email=\(email)&password=\(password)".data(using: .utf8, allowLossyConversion: false)
         URLSession.shared.dataTask(with: request) { data, response, error in
-            print(data, response, error)
+//            print(data, response, error)
             
             guard error == nil else {
                 completion(nil, .failed)
@@ -198,4 +199,6 @@ class APIService {
             }
         }.resume()
     }
+    
+    
 }

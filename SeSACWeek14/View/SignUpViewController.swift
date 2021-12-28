@@ -50,6 +50,23 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func okButtonClicked() {
+        viewModel.postUserRegister {
+            DispatchQueue.main.async {
+                
+                
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: BoardViewController())
+                windowScene.windows.first?.makeKeyAndVisible()
+            }
+        }
+    }
+    
+    func errorAlert(viewController: UIViewController) {
+        
+        let alert = UIAlertController(title: "이미 존재하는 아이디이거나 이메일입니다.", message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(action)
+        viewController.present(alert, animated: true, completion: nil)
         
     }
 }

@@ -47,7 +47,7 @@ class SignInViewController: UIViewController {
         viewModel.postUserLogin {
             DispatchQueue.main.async {
                 guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: MainViewController())
+                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: BoardViewController())
                 windowScene.windows.first?.makeKeyAndVisible()
             }
         }

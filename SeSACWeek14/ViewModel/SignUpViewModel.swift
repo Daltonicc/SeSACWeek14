@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SignUpViewModel {
     
@@ -18,6 +19,7 @@ class SignUpViewModel {
         APIService.signUp(username: username.value, email: email.value, password: password.value) { userData, error in
             
             guard let userData = userData else {
+
                 return
             }
             
@@ -25,4 +27,6 @@ class SignUpViewModel {
         }
         
     }
+    
+    
 }

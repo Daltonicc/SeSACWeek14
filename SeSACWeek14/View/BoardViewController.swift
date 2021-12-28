@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MainViewController: UIViewController {
+class BoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
